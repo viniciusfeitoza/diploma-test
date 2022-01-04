@@ -2,18 +2,9 @@ package com.dh.meli.diploma.entity;
 
 import lombok.Builder;
 
-import javax.validation.constraints.NotEmpty;
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Pattern;
-import javax.validation.constraints.Size;
-
 @Builder
 public class Disciplina {
     private String descricao;
-    @NotNull
-    @NotEmpty(message = "nome é obrigatório")
-    @Size(min = 1, max = 2, message = "Nota não permitida.")
-    @Pattern(regexp = "^[0-1]*$")
     private Double nota;
 
     public Disciplina(String descricao, Double nota) {

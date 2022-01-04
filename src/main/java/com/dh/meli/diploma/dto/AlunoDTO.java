@@ -7,6 +7,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import javax.validation.Valid;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
@@ -25,10 +26,7 @@ public class AlunoDTO {
     @Size(min = 8, max = 50, message = "tamanho minimo 8 e maximo 50")
     @Pattern(regexp = "^[a-zA-Z]*$")
     private String nome;
-    @NotNull
-    @NotEmpty(message = "disciplina é obrigatória")
-    @Size(min = 8, max = 50, message = "tamanho minimo 8 e maximo 50")
-    @Pattern(regexp = "^[a-zA-Z]*$")
+    @Valid
     private List<Disciplina> listaDisciplinas;
 
 
